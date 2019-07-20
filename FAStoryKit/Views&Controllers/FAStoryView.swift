@@ -109,7 +109,7 @@ final public class FAStoryView: UIView {
     // -----------------------------------
     private func _setupUI() {
         // load the nib file
-        guard let bundle = Bundle(identifier: "com.ferhatab.Mastermind.FAStoryKit") else {return}
+        guard let bundle = Bundle(identifier: "org.cocoapods.FAStoryKit") else {return}
         
         bundle.loadNibNamed("FAStoryView", owner: self, options: nil)
         
