@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SessionKit
 
 public class FAStoryImageContent: FAStoryContentTemplate<UIImage>, FAStoryContentProtocol {
  

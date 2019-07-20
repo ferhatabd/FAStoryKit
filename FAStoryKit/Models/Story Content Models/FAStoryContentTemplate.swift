@@ -8,6 +8,7 @@
 
 import Foundation
 import AVFoundation
+import SessionKit
 
 /// Story asset wrapper
 public struct FAStoryAsset<T> {
