@@ -70,11 +70,15 @@ final public class FAStoryView: UIView {
     // ==================================================== //
     public override init(frame: CGRect) {
         super.init(frame: frame)
+        translatesAutoresizingMaskIntoConstraints = false
         _setupUI()
     }
     
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        // initializing via storyboard
+        // set the auto resizing mask
+        translatesAutoresizingMaskIntoConstraints = true 
         _setupUI()
     }
     
@@ -138,6 +142,8 @@ final public class FAStoryView: UIView {
         // delay touches
         //
         collectionView.delaysContentTouches = false
+        
+        collectionView.backgroundColor = .clear
     }
     
     /// calculates the cell size based on the current configuration
@@ -161,6 +167,7 @@ extension FAStoryView: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FAStoryCollectionViewCell.ident, for: indexPath) as! FAStoryCollectionViewCell
         
         cell.setName(stories![indexPath.row].name, font: delegate?.displayNameFont ?? DefaultValues.shared.displayNameFont, color: .black)
+        cell.backgroundColor = backgroundColor
         
         if let image = stories?[indexPath.row].previewImage {
             cell.setImage(image)
