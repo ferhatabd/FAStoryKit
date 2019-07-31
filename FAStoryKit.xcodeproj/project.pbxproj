@@ -225,7 +225,6 @@
 				299619B30DFA4BB3048322C8 /* Pods-FAStoryKit.debug.xcconfig */,
 				872C58AAD60ACDD35C6B85AE /* Pods-FAStoryKit.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};

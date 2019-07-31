@@ -93,7 +93,6 @@ public extension FAStoryContentCacher {
         - destination: Destination to save the downloaded file
      */
     func startDownload(url: URL, name: String, destination: FileDestination_enm) {
-        print("path: \(FileHandler.shared.linkToCache)")
         //
         // Initialize the service
         //

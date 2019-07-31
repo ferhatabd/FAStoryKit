@@ -21,6 +21,9 @@ public protocol FAStoryDelegate: class {
     /// display name font
     var displayNameFont: UIFont {get}
     
+    /// vertical cell padding
+    func verticalCellPadding() -> CGFloat
+    
     /// did select
     func didSelect(row: Int) -> Void 
     
@@ -46,4 +49,7 @@ public extension FAStoryDelegate {
     var displayNameFont: UIFont {
         return DefaultValues.shared.displayNameFont
     }
+    
+    /// vertical cell padding
+    func verticalCellPadding() -> CGFloat { return 4 }
 }

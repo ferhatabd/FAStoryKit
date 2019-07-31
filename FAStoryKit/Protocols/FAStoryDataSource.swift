@@ -9,5 +9,7 @@
 import UIKit
 
 public protocol FAStoryDataSource: class {
+    /// Method to ask for the Stories
     func stories() -> [FAStory]?
 }
+

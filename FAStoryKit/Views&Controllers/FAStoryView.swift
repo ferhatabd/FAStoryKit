@@ -51,7 +51,7 @@ final public class FAStoryView: UIView {
     /// FAStoryDelegate
     public weak var delegate: FAStoryDelegate? {
         didSet {
-            collectionViewHeight?.constant = (delegate?.cellHeight ?? DefaultValues.shared.cellHeight) * 1.15
+            collectionViewHeight?.constant = (delegate?.cellHeight ?? DefaultValues.shared.cellHeight)
         }
     }
     // -----------------------------------
@@ -147,8 +147,9 @@ final public class FAStoryView: UIView {
     }
     
     /// calculates the cell size based on the current configuration
-    private func _cellSize(height h: CGFloat, aspectRatio r: CGFloat) -> CGSize {
-        return CGSize(width: h * r, height: h)
+    private func _cellSize(height h: CGFloat, aspectRatio r: CGFloat, verticalPadding padding: CGFloat) -> CGSize {
+        let _h = h - 2 * floor(padding)
+        return CGSize(width: _h * r, height: _h)
     }
     // -----------------------------------
 }
@@ -193,8 +194,9 @@ extension FAStoryView: UICollectionViewDelegate, UICollectionViewDelegateFlowLay
      
         let h = delegate?.cellHeight ?? DefaultValues.shared.cellHeight
         let r = delegate?.cellAspectRatio ?? DefaultValues.shared.cellAspectRatio
+        let p = delegate?.verticalCellPadding() ?? DefaultValues.shared.verticalCellPadding()
         
-        return _cellSize(height: h, aspectRatio: r)
+        return _cellSize(height: h, aspectRatio: r, verticalPadding: p)
     }
     
     /// horizontal spacing between items

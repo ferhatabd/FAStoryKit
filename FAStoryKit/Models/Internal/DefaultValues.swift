@@ -34,4 +34,8 @@ internal class DefaultValues: FAStoryDelegate {
     }
     
     func didSelect(row: Int) {  }
+    
+    func verticalCellPadding() -> CGFloat {
+        return 4
+    }
 }
