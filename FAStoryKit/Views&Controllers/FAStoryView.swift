@@ -167,7 +167,8 @@ extension FAStoryView: UICollectionViewDataSource {
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FAStoryCollectionViewCell.ident, for: indexPath) as! FAStoryCollectionViewCell
         
-        cell.setName(stories![indexPath.row].name, font: delegate?.displayNameFont ?? DefaultValues.shared.displayNameFont, color: .black)
+        cell.setName(stories![indexPath.row].name, font: delegate?.displayNameFont ?? DefaultValues.shared.displayNameFont, color: delegate?.displayNameColor ?? DefaultValues.shared.displayNameColor)
+        
         cell.backgroundColor = backgroundColor
         
         if let image = stories?[indexPath.row].previewImage {
