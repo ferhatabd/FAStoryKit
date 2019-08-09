@@ -5,16 +5,16 @@ Can be used as an alternative onboarding process or just to simply communicate n
 
 ## Some previews 
 
-- Story view in a view controller 
+ Story view in a view controller 
 ![Alt text](/../screenshots/1.png?raw=true "FAStoryView in a view controller")
 
-- FAStoryViewController with 2 stories
+FAStoryViewController with 2 stories
 ![Alt text](/../screenshots/2.png?raw=true "FAStoryViewController that has 2 stories")
 
-- Story with a details button 
+Story with a details button 
 ![Alt text](/../screenshots/3.png?raw=true "2nd story with a detail view button")
 
-- The URL in the details displayed in Safari
+The URL in the details displayed in Safari
 ![Alt text](/../screenshots/4.png?raw=true "Details of the story displayed in Safari")
 
 
