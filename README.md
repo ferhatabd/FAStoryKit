@@ -65,7 +65,7 @@ public protocol FAStoryDelegate: class {
 }
 ```
 
-- The datasource asks for the Stories to be displayed. Only thing that needs to be done is the return an array of the __FAStory__ objects.
+- The datasource asks for the Stories to be displayed. Only thing that needs to be done is to return an array of the __FAStory__ objects.
 
 ```swift
 extension YourVC: FAStoryDataSource {
