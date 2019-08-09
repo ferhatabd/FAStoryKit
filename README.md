@@ -61,7 +61,7 @@ public protocol FAStoryDelegate: class {
 ```swift
 extension YourVC: FAStoryDataSource {
     func stories() -> [FAStory]? {
-    return storyHandler.stories
+        return storyHandler.stories
     }
 }
 ```
