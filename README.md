@@ -3,6 +3,17 @@
 Provides an easy setup for displaying content like Instagram highlights.
 Can be used as an alternative onboarding process or just to simply communicate new things, campaigns, features etc to the users.
 
+## Some previews 
+
+![Alt text](/../<screenshots>/1 story_main.png?raw=true "FAStoryView in a view controller")
+
+![Alt text](/../<screenshots>/2 story_first.png?raw=true "FAStoryViewController that has 2 stories")
+
+![Alt text](/../<screenshots>/3 story_second.png?raw=true "2nd story with a detail view button")
+
+![Alt text](/../<screenshots>/4 story_detail.png?raw=true "Details of the story displayed in Safari")
+
+
 ## Configuring the FAStoryView in any parent view controller
 
 - Configure the view in your viewController
