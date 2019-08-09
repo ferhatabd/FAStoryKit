@@ -64,6 +64,7 @@
 		50A3DE7A22E0837D00E58FBE /* FAPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAPlayerView.swift; sourceTree = "<group>"; };
 		50A3DE7B22E0837D00E58FBE /* FAStoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAStoryVC.swift; sourceTree = "<group>"; };
 		50A3DE7C22E0837D00E58FBE /* FAStoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAStoryView.swift; sourceTree = "<group>"; };
+		50C0446522FD986D00E9EC03 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8063A169FDB3EEB3E024A4B2 /* Pods_FAStoryKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FAStoryKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		872C58AAD60ACDD35C6B85AE /* Pods-FAStoryKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FAStoryKit.release.xcconfig"; path = "Target Support Files/Pods-FAStoryKit/Pods-FAStoryKit.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,6 +84,7 @@
 		50A3DE4522E0835400E58FBE = {
 			isa = PBXGroup;
 			children = (
+				50C0446522FD986D00E9EC03 /* README.md */,
 				50A3DE5122E0835400E58FBE /* FAStoryKit */,
 				50A3DE5022E0835400E58FBE /* Products */,
 				E30A4CEE0692A1DE8D488896 /* Pods */,
