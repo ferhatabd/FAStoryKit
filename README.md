@@ -80,7 +80,7 @@ extension YourVC: FAStoryDataSource {
 
 Currently the framework supports __UIImage__ and __AVPlayer__ objects as the contents of the stories. Therefore images and videos can be displayed in any Story view. 
 
-To do that there is a dedicate ViewController that controls the rewind / next / previous features and that displays a progress indicator as well. 
+To do that there is a dedicated ViewController that controls the rewind / next / previous features and that displays a progress indicator as well. 
 
 All it takes is to initialize the viewController, pass the __FAStory__ object and present the view controller. 
 
