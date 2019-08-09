@@ -5,8 +5,8 @@ Can be used as an alternative onboarding process or just to simply communicate n
 
 ## Some previews 
 
- Story view in a view controller 
-![Alt text](/../screenshots/1.png?raw=true "FAStoryView in a view controller")
+
+![Story view in a view controller](/../screenshots/1.png?raw=true "FAStoryView in a view controller")
 
 FAStoryViewController with 2 stories
 ![Alt text](/../screenshots/2.png?raw=true "FAStoryViewController that has 2 stories")
