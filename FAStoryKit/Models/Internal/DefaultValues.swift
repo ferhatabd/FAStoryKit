@@ -30,7 +30,7 @@ internal class DefaultValues: FAStoryDelegate {
     
     /// display name font
     var displayNameFont: UIFont {
-        return UIFont(name: "Brown-Regular", size: 12)!
+        return .systemFont(ofSize: 12)
     }
     
     func didSelect(row: Int) {  }
