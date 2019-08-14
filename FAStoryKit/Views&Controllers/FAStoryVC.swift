@@ -653,7 +653,11 @@ final public class FAStoryViewController: UIViewController, StoryControllerDeleg
     /// Dismiss button
     @objc
     private func _dismiss() {
-        dismiss(animated: true)
+        if let _presenting = presentingViewController {
+            _presenting.dismiss(animated: true)
+        } else {
+            dismiss(animated: true)
+        }
     }
     
     
