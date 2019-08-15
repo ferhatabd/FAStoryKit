@@ -114,12 +114,12 @@ FAStory by default conforms to the __Decodable__ protocol. Therefore with a json
     "previewAsset":"dog",
     "contents": 
         [
-        {
-        "contentType":0,
-        "assetName":"doghd",
-        "externalURL":"fdfd",
-        "duration":10
-        }
+            {
+            "contentType":0,
+            "assetName":"doghd",
+            "externalURL":"fdfd",
+            "duration":10
+            }
         ]
     },
 
@@ -129,18 +129,18 @@ FAStory by default conforms to the __Decodable__ protocol. Therefore with a json
     "previewAsset":"cat",
     "contents": 
         [
-        {
-        "contentType":0,
-        "assetName":"cathd",
-        "externalURL":"fdfd",
-        "duration":10
-        },
-        {
-        "contentType":0,
-        "assetName":"pandahd",
-        "externalURL":"fdfd",
-        "duration":10
-        }
+            {
+            "contentType":0,
+            "assetName":"cathd",
+            "externalURL":"fdfd",
+            "duration":10
+            },
+            {
+            "contentType":0,
+            "assetName":"pandahd",
+            "externalURL":"fdfd",
+            "duration":10
+            }
         ]
     }]
     
