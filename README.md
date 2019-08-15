@@ -2,6 +2,8 @@
 
 Provides an easy setup for displaying content like Instagram highlights.
 Can be used as an alternative onboarding process or just to simply communicate new things, campaigns, features etc to the users.
+There is a starter project implementation [here](/../../FAStoryKitStarter) 
+Feel free to check it out 
 
 ## Features 
 
@@ -11,6 +13,7 @@ Currently __UIImage__ and __AVPlayer__ is supported as possible contents of a st
 - Custom container view for the highlights (see __FAStoryView__)
 - Custom view controller that is able to display an array of stories (therefore __[FAStory]__) with next/previous/pause on touch down action support  (see __FAStoryViewController__)
 - Segmented progress to display the current progress of the stories embedded in the view controller.
+
 
 ## Some previews 
 
@@ -98,3 +101,87 @@ present(storyVc, animated: true)
 
 
 
+## Creating FAStory objects 
+
+FAStory by default conforms to the __Decodable__ protocol. Therefore with a json file it's possible to initialize any. For example:
+
+```json 
+
+"stories": [{
+    "name":"R",
+    "contentNature":0,
+    "previewAsset":"dog",
+    "contents": 
+        [
+        {
+        "contentType":0,
+        "assetName":"doghd",
+        "externalURL":"fdfd",
+        "duration":10
+        }
+        ]
+    },
+
+    {
+    "name":"E",
+    "contentNature":0, 
+    "previewAsset":"cat",
+    "contents": 
+        [
+        {
+        "contentType":0,
+        "assetName":"cathd",
+        "externalURL":"fdfd",
+        "duration":10
+        },
+        {
+        "contentType":0,
+        "assetName":"pandahd",
+        "externalURL":"fdfd",
+        "duration":10
+        }
+        ]
+    }]
+    
+```
+
+and then: 
+
+```swift
+/// create the built in stories
+do {
+
+    //
+    // get the content from the config file
+    //
+    let data = try Data(contentsOf: Bundle.main.url(forResource: "Stories", withExtension: "json")!, options: [.mappedIfSafe])
+
+    //
+    // convert to json
+    //
+    guard let json = try JSONSerialization.jsonObject(with: data, options: [.mutableLeaves, .allowFragments]) as? NSDictionary else {return}
+
+    //
+    // extract the story data from the config
+    //
+    guard let _stories = json["stories"] as? [Any] else {return}
+
+    //
+    // go over all elements to initialize story objects
+    // from each
+    //
+    for _story in _stories {
+        let data = try JSONSerialization.data(withJSONObject: _story, options: [])
+
+        let _story = try JSONDecoder().decode(FAStory.self, from: data)
+
+        if self.stories == nil {
+            self.stories = [_story]
+        } else {
+            self.stories?.append(_story)
+        }
+    }
+} catch {
+    print(error.localizedDescription)
+}
+```
