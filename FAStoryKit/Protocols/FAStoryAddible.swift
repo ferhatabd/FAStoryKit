@@ -15,7 +15,6 @@ import Foundation
 /// to be added as a FAStory
 
 
-
 public protocol FAStoryAddible {
     
     /// content type

@@ -8,9 +8,10 @@
 
 import UIKit
 
+
 /// Main story container object
 
-final public class FAStory: NSObject, FAStoryTeller {
+final public class FAStory: NSObject, FAStoryTeller, Decodable {
     // ==================================================== //
     // MARK: Properties
     // ==================================================== //
@@ -38,6 +39,18 @@ final public class FAStory: NSObject, FAStoryTeller {
     // -----------------------------------
     // Private properties
     // -----------------------------------
+    /// CodingKeys for the json representation as these two differ
+    /// from the actual property names
+    ///
+    /// - previewImage: Preview image key name
+    /// - content: Content key name
+    private enum CodingKeys: String, CodingKey {
+        case name
+        case previewImage = "previewAsset"
+        case content = "contents"
+        case contentNature
+        
+    }
     
     // -----------------------------------
     
@@ -45,6 +58,61 @@ final public class FAStory: NSObject, FAStoryTeller {
     // ==================================================== //
     // MARK: Init
     // ==================================================== //
+    
+    
+    /// Initializer for the Decodable protocol
+    ///
+    public init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        let nature = try values.decode(Int.self, forKey: .contentNature)
+        let imageName = try values.decode(String.self, forKey: .previewImage)
+        contentNature = FAStoryContentNature(rawValue: nature) ?? .builtIn
+        name = try values.decode(String.self, forKey: .name)
+        previewImage = UIImage(named: imageName)
+        
+        super.init()
+        
+        let content = try values.decode([_StoryContentWrapper].self, forKey: .content)
+        
+        for _wrapper in content {
+            let contentType = _wrapper.contentType
+            let assetName = _wrapper.assetName
+            let duration = _wrapper.duration
+            
+            
+            let externalUrl: URL?
+            if let _path = _wrapper.interactionUrl, _path.isValidUrl() {
+                externalUrl = URL(string: _path)
+            } else {
+                externalUrl = nil
+            }
+            
+            let assetUrl: URL
+            
+            if let _url = URL(string: assetName) {
+                assetUrl = _url
+            } else {
+                assetUrl = Bundle.main.url(forResource: assetName, withExtension: nil)!
+                
+            }
+            
+            
+            switch contentType {
+            case .image:
+                let _content = FAStoryImageContent(assetURL: assetUrl, externUrl: externalUrl, duration: duration)
+                _content.setContentNature(self.contentNature)
+                self.addContent(_content)
+            case .video:
+                let _content = FAStoryVideoContent(assetURL: assetUrl, externUrl: externalUrl, duration: duration)
+                _content.setContentNature(self.contentNature)
+                self.addContent(_content)
+            default:
+                assert(false, "FAStory - Invalid content type, please implement the corresponding type.")
+            }
+        }
+        
+    }
+    
     /// Full fledged initializer for a story object
     ///
     /// - parameter content: Any object that conforms to __FAStoryAddible__

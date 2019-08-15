@@ -32,6 +32,7 @@
 		50A3DE9222E0837D00E58FBE /* FAPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A3DE7A22E0837D00E58FBE /* FAPlayerView.swift */; };
 		50A3DE9322E0837D00E58FBE /* FAStoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A3DE7B22E0837D00E58FBE /* FAStoryVC.swift */; };
 		50A3DE9422E0837D00E58FBE /* FAStoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A3DE7C22E0837D00E58FBE /* FAStoryView.swift */; };
+		50E2137D23059839002B9B03 /* StoryContentWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E2137C23059839002B9B03 /* StoryContentWrapper.swift */; };
 		71AD35FBE2795D6D2EF87D4E /* Pods_FAStoryKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8063A169FDB3EEB3E024A4B2 /* Pods_FAStoryKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +66,7 @@
 		50A3DE7B22E0837D00E58FBE /* FAStoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAStoryVC.swift; sourceTree = "<group>"; };
 		50A3DE7C22E0837D00E58FBE /* FAStoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAStoryView.swift; sourceTree = "<group>"; };
 		50C0446522FD986D00E9EC03 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		50E2137C23059839002B9B03 /* StoryContentWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryContentWrapper.swift; sourceTree = "<group>"; };
 		8063A169FDB3EEB3E024A4B2 /* Pods_FAStoryKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FAStoryKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		872C58AAD60ACDD35C6B85AE /* Pods-FAStoryKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FAStoryKit.release.xcconfig"; path = "Target Support Files/Pods-FAStoryKit/Pods-FAStoryKit.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -169,6 +171,7 @@
 			children = (
 				50A3DE6B22E0837D00E58FBE /* DefaultValues.swift */,
 				50A3DE6C22E0837D00E58FBE /* FAStoryController.swift */,
+				50E2137C23059839002B9B03 /* StoryContentWrapper.swift */,
 			);
 			path = Internal;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 				50A3DE8222E0837D00E58FBE /* FAStoryAddible.swift in Sources */,
 				50A3DE8B22E0837D00E58FBE /* FAStoryImageContent.swift in Sources */,
 				50A3DE9322E0837D00E58FBE /* FAStoryVC.swift in Sources */,
+				50E2137D23059839002B9B03 /* StoryContentWrapper.swift in Sources */,
 				50A3DE9222E0837D00E58FBE /* FAPlayerView.swift in Sources */,
 				50A3DE8722E0837D00E58FBE /* FAStoryContentType.swift in Sources */,
 				50A3DE8422E0837D00E58FBE /* FAStoryDelegate.swift in Sources */,
