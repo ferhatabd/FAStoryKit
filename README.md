@@ -109,41 +109,83 @@ FAStory by default conforms to the __Decodable__ protocol. Therefore with a json
 ```json 
 
 "stories": [{
-    "name":"R",
-    "contentNature":0,
-    "previewAsset":"dog",
-    "contents": 
-        [
-            {
-            "contentType":0,
-            "assetName":"doghd",
-            "externalURL":"fdfd",
-            "duration":10
-            }
-        ]
-    },
+        "name":"R",
+        "contentNature":0,
+        "previewAsset":"dog",
+        "contents": 
+            [
+                {
+                    "contentType":0,
+                    "assetName":"doghd",
+                    "externalURL":"",
+                    "duration":10
+                }
+            ]
+        },
 
-    {
-    "name":"E",
-    "contentNature":0, 
-    "previewAsset":"cat",
-    "contents": 
-        [
-            {
-            "contentType":0,
-            "assetName":"cathd",
-            "externalURL":"fdfd",
-            "duration":10
+        {
+            "name":"E",
+            "contentNature":0, 
+            "previewAsset":"cat",
+            "contents": 
+                [
+                    {
+                        "contentType":0,
+                        "assetName":"cathd",
+                        "externalURL":"",
+                        "duration":10
+                    },
+                    {
+                        "contentType":0,
+                        "assetName":"pandahd",
+                        "externalURL":"",
+                        "duration":10
+                    }
+                ]
             },
-            {
-            "contentType":0,
-            "assetName":"pandahd",
-            "externalURL":"fdfd",
-            "duration":10
+        {
+            "name":"V",
+            "contentNature":0, 
+            "previewAsset":"panda",
+            "contents": 
+                [
+                    {
+                        "contentType":1,
+                        "assetName":"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+                        "externalURL":"",
+                        "duration":10
+                    },
+                    {
+                        "contentType":0,
+                        "assetName":"cathd",
+                        "externalURL":"https://dinginkafa.com",
+                        "duration":10
+                    }
+                ]
+        },
+        
+        {
+            "name":"O",
+            "contentNature":0, 
+            "previewAsset":"giraffe",
+            "contents": 
+                [
+                    {
+                        "contentType":0,
+                        "assetName":"giraffehd",
+                        "externalURL":"",
+                        "duration":10
+                    },
+                    {
+                        "contentType":0,
+                        "assetName":"pandahd",
+                        "externalURL":"",
+                        "duration":10
+                    }
+                ]
             }
         ]
-    }]
-    
+    }
 ```
 
 and then: 
