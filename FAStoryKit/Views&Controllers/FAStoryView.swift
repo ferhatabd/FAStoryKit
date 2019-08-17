@@ -105,6 +105,13 @@ final public class FAStoryView: UIView {
         collectionView?.showsHorizontalScrollIndicator = !hidden
     }
     
+    /// Sets the insets for the collectionView
+    ///
+    /// - Parameter insets: Insets to be set
+    public func setContentInset(insets: UIEdgeInsets) {
+        collectionView?.contentInset = insets
+    }
+    
     // -----------------------------------
     
     
