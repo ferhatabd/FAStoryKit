@@ -169,7 +169,16 @@ extension FAStoryView: UICollectionViewDataSource {
         
         cell.setName(stories![indexPath.row].name, font: delegate?.displayNameFont ?? DefaultValues.shared.displayNameFont, color: delegate?.displayNameColor ?? DefaultValues.shared.displayNameColor)
         
+        
         cell.backgroundColor = backgroundColor
+        
+        //
+        // check the border settings for the cell
+        //
+        let w = delegate?.borderWidth ?? DefaultValues.shared.borderWidth ?? 0
+        let c = delegate?.borderColor ?? DefaultValues.shared.borderColor
+        
+        cell.setBorder(width: w, color: c)
         
         if let image = stories?[indexPath.row].previewImage {
             cell.setImage(image)

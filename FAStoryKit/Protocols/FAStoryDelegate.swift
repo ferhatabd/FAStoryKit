@@ -24,6 +24,12 @@ public protocol FAStoryDelegate: class {
     /// display name color
     var displayNameColor: UIColor {get}
     
+    /// borderWidth
+    var borderWidth: CGFloat? {get}
+    
+    /// borderColor
+    var borderColor: UIColor? {get}
+    
     /// vertical cell padding
     func verticalCellPadding() -> CGFloat
     

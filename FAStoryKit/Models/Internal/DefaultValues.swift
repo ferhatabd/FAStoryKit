@@ -28,6 +28,14 @@ internal class DefaultValues: FAStoryDelegate {
         return 1
     }
     
+    var borderWidth: CGFloat? {
+        return 2
+    }
+    
+    var borderColor: UIColor? {
+        return UIColor.lightGray.withAlphaComponent(0.4)
+    }
+    
     /// display name font
     var displayNameFont: UIFont {
         return .systemFont(ofSize: 12)

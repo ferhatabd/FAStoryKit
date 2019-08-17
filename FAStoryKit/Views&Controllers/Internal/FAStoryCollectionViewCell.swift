@@ -98,6 +98,17 @@ internal class FAStoryCollectionViewCell: UICollectionViewCell {
         guard isUiSetupDone else {return}
         imageView.image = image 
     }
+    
+    /// sets tge border width & color for the image
+    ///
+    /// - Parameters:
+    ///   - width: Border width, set 0 to disable
+    ///   - color: Border color
+    public func setBorder(width: CGFloat, color: UIColor?) {
+        guard isUiSetupDone else {return}
+        imageView.layer.borderWidth = width
+        imageView.layer.borderColor = color?.cgColor
+    }
     // -----------------------------------
     
     
@@ -122,8 +133,6 @@ internal class FAStoryCollectionViewCell: UICollectionViewCell {
         imageView.backgroundColor = .clear
         imageView.clipsToBounds = true
         imageView.layer.masksToBounds = true
-        imageView.layer.borderWidth = 2
-        imageView.layer.borderColor = UIColor.lightGray.withAlphaComponent(0.4).cgColor
         
         contentView.addSubview(imageView)
         
