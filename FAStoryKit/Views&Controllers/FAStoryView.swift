@@ -221,6 +221,10 @@ extension FAStoryView: UICollectionViewDelegate, UICollectionViewDelegateFlowLay
         return delegate?.cellHorizontalSpacing ?? DefaultValues.shared.cellHorizontalSpacing
     }
     
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return delegate?.cellHorizontalSpacing ?? DefaultValues.shared.cellHorizontalSpacing
+    }
+    
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: delegate?.cellHorizontalSpacing ?? DefaultValues.shared.cellHorizontalSpacing, bottom: 0, right: delegate?.cellHorizontalSpacing ?? DefaultValues.shared.cellHorizontalSpacing)
     }

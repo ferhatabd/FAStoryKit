@@ -136,7 +136,7 @@ internal class FAStoryCollectionViewCell: UICollectionViewCell {
         
         contentView.addSubview(imageView)
         
-        imageView.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.75).isActive = true
+        imageView.widthAnchor.constraint(equalTo: contentView.widthAnchor).isActive = true
         imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor).isActive = true
         imageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 1).isActive = true
         imageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
