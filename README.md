@@ -14,6 +14,7 @@ Feel free to check it out
 - Tap to go forward / backward 
 - Swipe down to dismiss
 - Story content implementation 
+- Built in support for handling url's within stories & displaying them in Safari
 - Generic content backing template (see __FAStoryContentTemplate__) for future extensions.
 Currently __UIImage__ and __AVPlayer__ is supported as possible contents of a story but it's possible to subclass the generic template to create further content types.
 - Custom container view for the highlights (see __FAStoryView__)
