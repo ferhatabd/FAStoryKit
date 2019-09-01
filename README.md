@@ -15,6 +15,7 @@ Feel free to check it out
 - Swipe down to dismiss
 - Story content implementation 
 - Built in support for handling url's within stories & displaying them in Safari
+- Stories are configurable with a simple json cfg file & can be directly initiliazed from there making use of the __Decodable__
 - Generic content backing template (see __FAStoryContentTemplate__) for future extensions.
 Currently __UIImage__ and __AVPlayer__ is supported as possible contents of a story but it's possible to subclass the generic template to create further content types.
 - Custom container view for the highlights (see __FAStoryView__)
