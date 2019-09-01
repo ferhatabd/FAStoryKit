@@ -8,12 +8,16 @@ Feel free to check it out
 
 ## Features 
 
+
+- Segmented progress bar to display the current progress of the stories embedded in the view controller.
+- Long press to pause 
+- Tap to go forward / backward 
+- Swipe down to dismiss
 - Story content implementation 
 - Generic content backing template (see __FAStoryContentTemplate__) for future extensions.
 Currently __UIImage__ and __AVPlayer__ is supported as possible contents of a story but it's possible to subclass the generic template to create further content types.
 - Custom container view for the highlights (see __FAStoryView__)
 - Custom view controller that is able to display an array of stories (therefore __[FAStory]__) with next/previous/pause on touch down action support  (see __FAStoryViewController__)
-- Segmented progress to display the current progress of the stories embedded in the view controller.
 
 
 ## Some previews 
