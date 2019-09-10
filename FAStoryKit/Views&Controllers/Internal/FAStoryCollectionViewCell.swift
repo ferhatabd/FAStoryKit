@@ -147,7 +147,7 @@ internal class FAStoryCollectionViewCell: UICollectionViewCell {
         //
         lblDisplayName = UILabel()
         lblDisplayName.translatesAutoresizingMaskIntoConstraints = false
-        lblDisplayName.numberOfLines = 1
+        lblDisplayName.numberOfLines = 2
         lblDisplayName.textAlignment = .center
         lblDisplayName.backgroundColor = .clear
         
