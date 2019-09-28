@@ -15,4 +15,9 @@ internal extension Double {
     var cgFloat: CGFloat {
         return CGFloat(self)
     }
+    
+    /// Radiants to Degress
+    var toDegrees: Double {
+        return (self * 180) / .pi
+    }
 }

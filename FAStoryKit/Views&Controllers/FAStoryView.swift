@@ -42,6 +42,7 @@ final public class FAStoryView: UIView {
         didSet {
             DispatchQueue.main.async {
                 self.stories = self.dataSource?.stories()
+                FAStoryVcStack.shared.stories = self.stories
                 guard let cv = self.collectionView else {return}
                 cv.reloadData()
             }
@@ -174,7 +175,9 @@ extension FAStoryView: UICollectionViewDataSource {
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FAStoryCollectionViewCell.ident, for: indexPath) as! FAStoryCollectionViewCell
         
-        cell.setName(stories![indexPath.row].name, font: delegate?.displayNameFont ?? DefaultValues.shared.displayNameFont, color: delegate?.displayNameColor ?? DefaultValues.shared.displayNameColor)
+        cell.setName(stories![indexPath.row].name,
+                     font: delegate?.displayNameFont ?? DefaultValues.shared.displayNameFont,
+                     color: delegate?.displayNameColor ?? DefaultValues.shared.displayNameColor)
         
         
         cell.backgroundColor = backgroundColor

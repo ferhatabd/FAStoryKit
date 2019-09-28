@@ -180,7 +180,16 @@ final public class FAStoryViewController: UIViewController, StoryControllerDeleg
         _init()
         _configUI()
         _gradSetup()
-        dismissInteractionController = SwipeInteractionController(viewController: self)
+        
+        //
+        // Prepeare the dismiss interactor in case
+        // the VC is not embedded in a navigationController
+        // if it is, it's upto the navigationController
+        // to decide whether or not to have a dismiss interaction controller
+        //
+        if navigationController == nil {
+            dismissInteractionController = SwipeInteractionController(viewController: self)
+        }
     }
  
     
@@ -193,12 +202,28 @@ final public class FAStoryViewController: UIViewController, StoryControllerDeleg
         _addGradientLayer()
     }
     
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if parent != nil {
+            FAStoryVcStack.shared.set(currentViewController: self)
+        }
+    }
+    
     public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         storyController.start()
     }
+    
+    public override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        storyController?.pause()
+    }
   
+    public override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        storyController?.stop()
+    }
     
     
     // ==================================================== //
@@ -255,7 +280,9 @@ final public class FAStoryViewController: UIViewController, StoryControllerDeleg
     }
 
     func storyCurrentContentFinished() {
-        if !storyController.setNext() && !isBeingDismissed {
+        let isParentBeingDismissed = parent?.isBeingDismissed ?? false
+        
+        if !storyController.setNext() && !isBeingDismissed && !isParentBeingDismissed {
             presentingViewController?.dismiss(animated: true)
         }  else {
             storyController.start()
@@ -296,6 +323,14 @@ final public class FAStoryViewController: UIViewController, StoryControllerDeleg
     }
     
     public func start() { }
+    
+    public func pause() {
+        storyController?.pause()
+    }
+    
+    public func stop() {
+        
+    }
     
 
     /// Internal UI config
@@ -791,5 +826,17 @@ extension FAStoryViewController: UIGestureRecognizerDelegate {
         }
         
         return true
+    }
+    
+}
+
+//
+// MARK: NSMutableCopying
+//
+extension FAStoryViewController: NSMutableCopying {
+    public func mutableCopy(with zone: NSZone? = nil) -> Any {
+        let vc = FAStoryViewController()
+        vc.story = story
+        return vc
     }
 }
