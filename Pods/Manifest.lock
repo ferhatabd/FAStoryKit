@@ -1,0 +1,21 @@
+PODS:
+  - FAGlobalKit (1.1.0)
+  - SessionKit (1.1)
+
+DEPENDENCIES:
+  - FAGlobalKit (from `/Users/abdullahoglu/Desktop/Projects/Frameworks/FAGlobalKit`)
+  - SessionKit (from `/Users/abdullahoglu/Desktop/Projects/Frameworks/SessionKit`)
+
+EXTERNAL SOURCES:
+  FAGlobalKit:
+    :path: "/Users/abdullahoglu/Desktop/Projects/Frameworks/FAGlobalKit"
+  SessionKit:
+    :path: "/Users/abdullahoglu/Desktop/Projects/Frameworks/SessionKit"
+
+SPEC CHECKSUMS:
+  FAGlobalKit: eca68501886cd14811a9d3f1293e1bc0c9d0289e
+  SessionKit: 82f2f5ea26beba599ca1739a8534e052d2280e98
+
+PODFILE CHECKSUM: e0b76cb26afb53b03142e87c8773c95d816e3910
+
+COCOAPODS: 1.8.0.beta.2

@@ -1,0 +1,20 @@
+{
+  "name": "FAGlobalKit",
+  "version": "1.1.0",
+  "summary": "UIKit helper protocols",
+  "description": "UIKit helper protocols",
+  "homepage": "https://github.com/ferhatabd/FAGlobalKit.git",
+  "license": "MIT",
+  "authors": {
+    "Ferhat Abdullahoglu": "abdullahoglu@sabanciuniv.edu"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "source": {
+    "path": "/Users/abdullahoglu/Desktop/Projects/Frameworks/FAGlobalKit/FAGlobalKit",
+    "tag": "1.1.0"
+  },
+  "source_files": "FAGlobalKit/**/*.{swift, h, xib, strings}",
+  "exclude_files": "Classes/Exclude"
+}

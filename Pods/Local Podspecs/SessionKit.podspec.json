@@ -1,0 +1,33 @@
+{
+  "name": "SessionKit",
+  "version": "1.1",
+  "summary": "Session infrastructure handling for Dingin Kafa: Meditation app.",
+  "description": "Handles the session configuration as well as CoreData handling for configuration persistence.",
+  "homepage": "https://github.com/ferhatabd/SessionKit.git",
+  "license": "MIT",
+  "authors": {
+    "Ferhat Abdullahoglu": "abdullahoglu@sabanciuniv.edu"
+  },
+  "platforms": {
+    "ios": "10.0",
+    "watchos": "4.0"
+  },
+  "info_plist": {
+    "CFBundleIdentifier": "com.ferhatab.SessionKit"
+  },
+  "source": {
+    "path": "/Users/abdullahoglu/Desktop/Projects/Frameworks/SessionKit/SessionKit",
+    "tag": "1.1"
+  },
+  "source_files": "SessionKit/shared/**/*.{swift,h,xib,strings}",
+  "ios": {
+    "source_files": "SessionKit/ios/**/*.{swift,h,xib,strings}"
+  },
+  "watchos": {
+    "source_files": [
+      "SessionKit/watchos/*.{swift,h,xib,strings}",
+      "SessionKit/watchos/**/*.{swift,h,xib,strings}"
+    ]
+  },
+  "resources": "SessionKit/shared/*.{xcdatamodeld}"
+}

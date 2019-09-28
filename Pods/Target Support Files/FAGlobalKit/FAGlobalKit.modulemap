@@ -1,0 +1,6 @@
+framework module FAGlobalKit {
+  umbrella header "FAGlobalKit-umbrella.h"
+
+  export *
+  module * { export * }
+}
