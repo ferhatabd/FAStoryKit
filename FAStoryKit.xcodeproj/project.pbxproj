@@ -33,6 +33,13 @@
 		50A3DE9322E0837D00E58FBE /* FAStoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A3DE7B22E0837D00E58FBE /* FAStoryVC.swift */; };
 		50A3DE9422E0837D00E58FBE /* FAStoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A3DE7C22E0837D00E58FBE /* FAStoryView.swift */; };
 		50E2137D23059839002B9B03 /* StoryContentWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E2137C23059839002B9B03 /* StoryContentWrapper.swift */; };
+		50F20A372340EC5F0084A9B4 /* FAStoryContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F20A362340EC5F0084A9B4 /* FAStoryContainerVC.swift */; };
+		50F20A392340ECA40084A9B4 /* FAStoryVcStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F20A382340ECA40084A9B4 /* FAStoryVcStack.swift */; };
+		50F20A3D2340ECF60084A9B4 /* TransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F20A3B2340ECF60084A9B4 /* TransitionAnimator.swift */; };
+		50F20A3E2340ECF60084A9B4 /* FAStoryContainer+TransitionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F20A3C2340ECF60084A9B4 /* FAStoryContainer+TransitionCoordinator.swift */; };
+		50F20A402340ED2A0084A9B4 /* TouchProgressCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F20A3F2340ED2A0084A9B4 /* TouchProgressCalculator.swift */; };
+		50F20A45234122450084A9B4 /* _NSNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F20A43234122450084A9B4 /* _NSNotification.swift */; };
+		50F20A46234122450084A9B4 /* _UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F20A44234122450084A9B4 /* _UINavigationController.swift */; };
 		71AD35FBE2795D6D2EF87D4E /* Pods_FAStoryKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8063A169FDB3EEB3E024A4B2 /* Pods_FAStoryKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +74,13 @@
 		50A3DE7C22E0837D00E58FBE /* FAStoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAStoryView.swift; sourceTree = "<group>"; };
 		50C0446522FD986D00E9EC03 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		50E2137C23059839002B9B03 /* StoryContentWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryContentWrapper.swift; sourceTree = "<group>"; };
+		50F20A362340EC5F0084A9B4 /* FAStoryContainerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAStoryContainerVC.swift; sourceTree = "<group>"; };
+		50F20A382340ECA40084A9B4 /* FAStoryVcStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAStoryVcStack.swift; sourceTree = "<group>"; };
+		50F20A3B2340ECF60084A9B4 /* TransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionAnimator.swift; sourceTree = "<group>"; };
+		50F20A3C2340ECF60084A9B4 /* FAStoryContainer+TransitionCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FAStoryContainer+TransitionCoordinator.swift"; sourceTree = "<group>"; };
+		50F20A3F2340ED2A0084A9B4 /* TouchProgressCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchProgressCalculator.swift; sourceTree = "<group>"; };
+		50F20A43234122450084A9B4 /* _NSNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _NSNotification.swift; sourceTree = "<group>"; };
+		50F20A44234122450084A9B4 /* _UINavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _UINavigationController.swift; sourceTree = "<group>"; };
 		8063A169FDB3EEB3E024A4B2 /* Pods_FAStoryKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FAStoryKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		872C58AAD60ACDD35C6B85AE /* Pods-FAStoryKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FAStoryKit.release.xcconfig"; path = "Target Support Files/Pods-FAStoryKit/Pods-FAStoryKit.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -128,6 +142,8 @@
 		50A3DE5B22E0837C00E58FBE /* Internal */ = {
 			isa = PBXGroup;
 			children = (
+				50F20A43234122450084A9B4 /* _NSNotification.swift */,
+				50F20A44234122450084A9B4 /* _UINavigationController.swift */,
 				50A3DE5C22E0837C00E58FBE /* _Double.swift */,
 				50A3DE5D22E0837C00E58FBE /* _String.swift */,
 			);
@@ -149,6 +165,7 @@
 		50A3DE6522E0837D00E58FBE /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				50F20A382340ECA40084A9B4 /* FAStoryVcStack.swift */,
 				50A3DE6622E0837D00E58FBE /* FAStory.swift */,
 				50A3DE6722E0837D00E58FBE /* Type Definitions */,
 				50A3DE6A22E0837D00E58FBE /* Internal */,
@@ -169,6 +186,7 @@
 		50A3DE6A22E0837D00E58FBE /* Internal */ = {
 			isa = PBXGroup;
 			children = (
+				50F20A3F2340ED2A0084A9B4 /* TouchProgressCalculator.swift */,
 				50A3DE6B22E0837D00E58FBE /* DefaultValues.swift */,
 				50A3DE6C22E0837D00E58FBE /* FAStoryController.swift */,
 				50E2137C23059839002B9B03 /* StoryContentWrapper.swift */,
@@ -205,9 +223,11 @@
 		50A3DE7422E0837D00E58FBE /* Views&Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				50A3DE7522E0837D00E58FBE /* Internal */,
+				50F20A362340EC5F0084A9B4 /* FAStoryContainerVC.swift */,
 				50A3DE7B22E0837D00E58FBE /* FAStoryVC.swift */,
 				50A3DE7C22E0837D00E58FBE /* FAStoryView.swift */,
+				50F20A3A2340ECF60084A9B4 /* CustomTransition */,
+				50A3DE7522E0837D00E58FBE /* Internal */,
 			);
 			path = "Views&Controllers";
 			sourceTree = "<group>";
@@ -223,6 +243,16 @@
 			);
 			path = Internal;
 			sourceTree = "<group>";
+		};
+		50F20A3A2340ECF60084A9B4 /* CustomTransition */ = {
+			isa = PBXGroup;
+			children = (
+				50F20A3B2340ECF60084A9B4 /* TransitionAnimator.swift */,
+				50F20A3C2340ECF60084A9B4 /* FAStoryContainer+TransitionCoordinator.swift */,
+			);
+			name = CustomTransition;
+			path = "FAStoryKit/Views&Controllers/CustomTransition";
+			sourceTree = SOURCE_ROOT;
 		};
 		E30A4CEE0692A1DE8D488896 /* Pods */ = {
 			isa = PBXGroup;
@@ -348,13 +378,18 @@
 			files = (
 				50A3DE9122E0837D00E58FBE /* StoryIndicatorContainerView.swift in Sources */,
 				50A3DE7E22E0837D00E58FBE /* _String.swift in Sources */,
+				50F20A3D2340ECF60084A9B4 /* TransitionAnimator.swift in Sources */,
+				50F20A45234122450084A9B4 /* _NSNotification.swift in Sources */,
+				50F20A46234122450084A9B4 /* _UINavigationController.swift in Sources */,
 				50A3DE8622E0837D00E58FBE /* FAStoryContentNature.swift in Sources */,
 				50A3DE8522E0837D00E58FBE /* FAStory.swift in Sources */,
 				50A3DE7F22E0837D00E58FBE /* _FAStory.swift in Sources */,
 				50A3DE9422E0837D00E58FBE /* FAStoryView.swift in Sources */,
 				50A3DE8222E0837D00E58FBE /* FAStoryAddible.swift in Sources */,
 				50A3DE8B22E0837D00E58FBE /* FAStoryImageContent.swift in Sources */,
+				50F20A392340ECA40084A9B4 /* FAStoryVcStack.swift in Sources */,
 				50A3DE9322E0837D00E58FBE /* FAStoryVC.swift in Sources */,
+				50F20A402340ED2A0084A9B4 /* TouchProgressCalculator.swift in Sources */,
 				50E2137D23059839002B9B03 /* StoryContentWrapper.swift in Sources */,
 				50A3DE9222E0837D00E58FBE /* FAPlayerView.swift in Sources */,
 				50A3DE8722E0837D00E58FBE /* FAStoryContentType.swift in Sources */,
@@ -362,7 +397,9 @@
 				50A3DE8922E0837D00E58FBE /* FAStoryController.swift in Sources */,
 				50A3DE8A22E0837D00E58FBE /* FAStoryContentTemplate.swift in Sources */,
 				50A3DE9022E0837D00E58FBE /* FAStoryCollectionViewCell.swift in Sources */,
+				50F20A372340EC5F0084A9B4 /* FAStoryContainerVC.swift in Sources */,
 				50A3DE8822E0837D00E58FBE /* DefaultValues.swift in Sources */,
+				50F20A3E2340ECF60084A9B4 /* FAStoryContainer+TransitionCoordinator.swift in Sources */,
 				50A3DE8322E0837D00E58FBE /* FAStoryContentCacher.swift in Sources */,
 				50A3DE8022E0837D00E58FBE /* FAStoryTeller.swift in Sources */,
 				50A3DE7D22E0837D00E58FBE /* _Double.swift in Sources */,

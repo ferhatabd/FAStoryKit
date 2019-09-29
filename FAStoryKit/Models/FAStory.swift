@@ -38,7 +38,17 @@ final public class FAStory: NSObject, FAStoryTeller, Decodable {
     
     /// flag that returns if th story has been watched before
     public var isSeen: Bool {
-        return UserDefaults.standard.bool(forKey: storySeenKey)
+        get {
+            return UserDefaults.standard.bool(forKey: storySeenKey)
+        }
+        
+        set {
+            DispatchQueue.global(qos: .userInteractive).async {
+                NotificationCenter.default.post(name: .storySeen,
+                                                object: nil,
+                                                userInfo: ["storyIdent":self.ident])
+            }
+        }
     }
     
     // -----------------------------------
@@ -172,6 +182,7 @@ final public class FAStory: NSObject, FAStoryTeller, Decodable {
     /// Method to save the story as seen before
     public func setSeen() {
         UserDefaults.standard.set(true, forKey: storySeenKey)
+        isSeen = true
     }
     // -----------------------------------
     

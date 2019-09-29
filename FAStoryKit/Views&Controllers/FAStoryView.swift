@@ -92,6 +92,11 @@ final public class FAStoryView: UIView {
     }
     
     
+    public override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        collectionView?.reloadData()
+    }
+    
     
     // ==================================================== //
     // MARK: Methods
@@ -131,6 +136,12 @@ final public class FAStoryView: UIView {
         storyView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
         _cvSetup()
+        
+        /// subciribe to the story seen notification
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(_storySeen(_:)),
+                                               name: .storySeen,
+                                               object: nil)
     }
     
     
@@ -158,6 +169,15 @@ final public class FAStoryView: UIView {
     private func _cellSize(height h: CGFloat, aspectRatio r: CGFloat, verticalPadding padding: CGFloat) -> CGSize {
         let _h = h - 2 * floor(padding)
         return CGSize(width: _h * r, height: _h)
+    }
+    
+    /// story seen notirication selector
+    @objc
+    private func _storySeen(_ notification: Notification) {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else {return}
+            self.collectionView?.reloadData()
+        }
     }
     // -----------------------------------
 }
@@ -192,6 +212,8 @@ extension FAStoryView: UICollectionViewDataSource {
             
         
         cell.setBorder(width: w, color: c)
+        
+        cell.storyIdent = stories![indexPath.row].ident
         
         if let image = stories?[indexPath.row].previewImage {
             cell.setImage(image)

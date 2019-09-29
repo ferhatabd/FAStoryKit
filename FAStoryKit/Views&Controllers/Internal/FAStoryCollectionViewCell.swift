@@ -40,6 +40,9 @@ internal class FAStoryCollectionViewCell: UICollectionViewCell {
     /// label for the name
     internal var lblDisplayName: UILabel!
     
+    /// story ident
+    internal var storyIdent = ""
+    
     // -----------------------------------
     
     
@@ -117,7 +120,7 @@ internal class FAStoryCollectionViewCell: UICollectionViewCell {
     // -----------------------------------
     /// UI Setup
     private func _setupUI() {
-        
+       
         //
         // clear the background color
         //
@@ -160,6 +163,7 @@ internal class FAStoryCollectionViewCell: UICollectionViewCell {
         isUiSetupDone = true
         
     }
+    
     // -----------------------------------
     
 }
