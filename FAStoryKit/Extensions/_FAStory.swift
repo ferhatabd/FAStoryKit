@@ -19,11 +19,15 @@ public extension FAStory {
             let nature = dict["contentNature"] as? Int,
             let preview = dict["previewAsset"] as? String,
             let contents = dict["contents"] as? Array<[String:Any]> else {return nil}
+        
+        let ident = dict["ident"] as? String ?? UUID().uuidString
      
         self.init()
         
         self.name = name
         self.contentNature = nature == 0 ? .builtIn : .online
+        self.ident = ident
+        
         switch self.contentNature {
         case .online:
             break // TBA

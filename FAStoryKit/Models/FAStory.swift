@@ -33,6 +33,9 @@ final public class FAStory: NSObject, FAStoryTeller, Decodable {
     /// .builtIn || .online
     public var contentNature: FAStoryContentNature
     
+    /// ident of the story
+    public var ident: String
+    
     // -----------------------------------
     
     
@@ -49,6 +52,7 @@ final public class FAStory: NSObject, FAStoryTeller, Decodable {
         case previewImage = "previewAsset"
         case content = "contents"
         case contentNature
+        case ident
         
     }
     
@@ -66,9 +70,11 @@ final public class FAStory: NSObject, FAStoryTeller, Decodable {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         let nature = try values.decode(Int.self, forKey: .contentNature)
         let imageName = try values.decode(String.self, forKey: .previewImage)
+        let ident = try values.decodeIfPresent(String.self, forKey: .ident) ?? UUID().uuidString
         contentNature = FAStoryContentNature(rawValue: nature) ?? .builtIn
         name = try values.decode(String.self, forKey: .name)
         previewImage = UIImage(named: imageName)
+        self.ident = ident
         
         super.init()
         
@@ -118,10 +124,11 @@ final public class FAStory: NSObject, FAStoryTeller, Decodable {
     /// - parameter content: Any object that conforms to __FAStoryAddible__
     /// - parameter name: Name of the story object
     /// - parameter flag: True if the content is builtIn False if otherwise
-    public init(with content: FAStoryAddible, name: String, builtIn flag: Bool = true, preview image: UIImage? = nil) {
+    public init(with content: FAStoryAddible, name: String, builtIn flag: Bool = true, preview image: UIImage? = nil, ident: String) {
         self.name = name
         self.content = [content]
         self.contentNature = flag ? .builtIn : .online
+        self.ident = ident
         //
         super.init()
         //
@@ -132,6 +139,7 @@ final public class FAStory: NSObject, FAStoryTeller, Decodable {
     /// The created story object nature will be __builtIn__
     public override init() {
         contentNature = .builtIn
+        ident = UUID().uuidString
         super.init()
     }
 
