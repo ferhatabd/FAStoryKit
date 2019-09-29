@@ -27,8 +27,11 @@ public protocol FAStoryDelegate: class {
     /// borderWidth
     var borderWidth: CGFloat? {get}
     
-    /// borderColor
-    var borderColor: UIColor? {get}
+    /// borderColor for a story that's not seen
+    var borderColorUnseen: UIColor? {get}
+    
+    /// borderColor for a story that's seen
+    var borderColorSeen: UIColor? {get}
     
     /// vertical cell padding
     func verticalCellPadding() -> CGFloat

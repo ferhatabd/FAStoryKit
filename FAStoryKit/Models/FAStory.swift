@@ -36,6 +36,11 @@ final public class FAStory: NSObject, FAStoryTeller, Decodable {
     /// ident of the story
     public var ident: String
     
+    /// flag that returns if th story has been watched before
+    public var isSeen: Bool {
+        return UserDefaults.standard.bool(forKey: storySeenKey)
+    }
+    
     // -----------------------------------
     
     
@@ -56,6 +61,10 @@ final public class FAStory: NSObject, FAStoryTeller, Decodable {
         
     }
     
+    /// story key for the UserDefaults
+    private var storySeenKey: String {
+        return "isStorySeen_\(ident)"
+    }
     // -----------------------------------
     
     
@@ -158,6 +167,11 @@ final public class FAStory: NSObject, FAStoryTeller, Decodable {
         } else {
             self.content = [content]
         }
+    }
+    
+    /// Method to save the story as seen before
+    public func setSeen() {
+        UserDefaults.standard.set(true, forKey: storySeenKey)
     }
     // -----------------------------------
     

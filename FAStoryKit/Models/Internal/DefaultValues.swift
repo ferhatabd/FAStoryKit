@@ -32,7 +32,11 @@ internal class DefaultValues: FAStoryDelegate {
         return 2
     }
     
-    var borderColor: UIColor? {
+    var borderColorSeen: UIColor? {
+        return UIColor.lightGray.withAlphaComponent(0.4)
+    }
+    
+    var borderColorUnseen: UIColor? {
         return UIColor.lightGray.withAlphaComponent(0.4)
     }
     

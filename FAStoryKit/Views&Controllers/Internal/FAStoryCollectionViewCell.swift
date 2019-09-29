@@ -26,7 +26,7 @@ internal class FAStoryCollectionViewCell: UICollectionViewCell {
     // ==================================================== //
     
     // -----------------------------------
-    // Public properties
+    // Internal properties
     // -----------------------------------
     
     /// ident

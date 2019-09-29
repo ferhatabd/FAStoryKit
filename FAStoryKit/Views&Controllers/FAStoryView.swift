@@ -186,7 +186,10 @@ extension FAStoryView: UICollectionViewDataSource {
         // check the border settings for the cell
         //
         let w = delegate?.borderWidth ?? DefaultValues.shared.borderWidth ?? 0
-        let c = delegate?.borderColor ?? DefaultValues.shared.borderColor
+        let c = stories![indexPath.row].isSeen ?
+            (delegate?.borderColorSeen ?? DefaultValues.shared.borderColorSeen) :
+            (delegate?.borderColorUnseen ?? DefaultValues.shared.borderColorUnseen)
+            
         
         cell.setBorder(width: w, color: c)
         
