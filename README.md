@@ -106,6 +106,21 @@ storyVc.transitioningDelegate = self
 present(storyVc, animated: true)
 ```
 
+If you want to use the default auto-switching behaviour between story highlights, use __FAStoryContainerVC__ instead. This brings the auto-switching both with next / previous taps on the screen and with a custom interactive transitioning.
+
+```swift
+storyVc = FAStoryViewController()
+storyVc.delegate = self
+storyVc.story = _stories[idx]
+
+storyContainerVc = FAStoryContainer(storyController: storyVc)
+storyContainerVc.modalPresentationStyle = .overFullScreen
+storyContainerVc.modalPresentationCapturesStatusBarAppearance = true
+storyContainerVc.transitioningDelegate = self
+
+present(storyContainerVc, animated: true) 
+```
+
 
 
 ## Creating FAStory objects 
