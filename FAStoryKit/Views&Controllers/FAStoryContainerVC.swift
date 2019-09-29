@@ -123,6 +123,7 @@ public class FAStoryContainer: UINavigationController, SwipeDismissInteractibleN
         current.pause()
         
         presentationDirection = .left
+        transitionCoordinatorHelper?.presentationDirection = presentationDirection
         pushViewController(next, animated: true)
     }
     
@@ -137,6 +138,7 @@ public class FAStoryContainer: UINavigationController, SwipeDismissInteractibleN
         current.pause()
         
         presentationDirection = .right
+        transitionCoordinatorHelper?.presentationDirection = presentationDirection
         pushViewController(prev, animated: true)
     }
     

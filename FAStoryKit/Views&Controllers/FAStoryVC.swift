@@ -242,6 +242,24 @@ final public class FAStoryViewController: UIViewController, StoryControllerDeleg
         currentStoryIndicator?.setProgress(p)
     }
     
+    func shouldShowNext() -> Bool {
+        guard let containerVC = parent as? FAStoryContainer else { return false }
+        let canShow = containerVC.canShowNext
+        if canShow {
+            containerVC.jumpForward()
+        }
+        return canShow
+    }
+    
+    func shouldShowPrevious() -> Bool {
+        guard let containerVC = parent as? FAStoryContainer else { return false }
+        let canShow = containerVC.canShowPrevious
+        if canShow {
+            containerVC.jumpBackward()
+        }
+        return canShow
+    }
+    
     func storyAssetDownloadProgress<Asset>(_ asset: FAStoryAsset<Asset>, progress: Float) { }
     
     func storyAssetDownloadCompleted<Asset>(_ asset: FAStoryAsset<Asset>) { }

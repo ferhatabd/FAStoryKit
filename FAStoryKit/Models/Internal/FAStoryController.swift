@@ -13,6 +13,12 @@ import AVFoundation
 internal protocol StoryControllerDelegate: class {
     func storyProgressChanged(_ progress: Double)
     func storyCurrentContentFinished()
+    /// is called when the current story has no more content
+    /// to let the higher control to show the next highlight content 
+    func shouldShowNext() -> Bool
+    /// is called when the current story has no more previous content
+    /// to let the higher control to show the previous highlight content
+    func shouldShowPrevious() -> Bool
     func storyAssetChanged<Asset>(_ asset: FAStoryAsset<Asset>?)
     func storyAssetInitStart()
     func storyAssetReady<Asset>(_ asset: FAStoryAsset<Asset>?)
@@ -156,7 +162,7 @@ internal class FAStoryController: NSObject, FAStoryContentDelegate {
         }
         
         //
-        return false
+        return delegate?.shouldShowNext() ?? false
     }
     
     
@@ -164,19 +170,26 @@ internal class FAStoryController: NSObject, FAStoryContentDelegate {
     func setPrev() -> Bool {
       
         guard currentIdx > 0 else {
-            _ = _initContent(story.content?[0])
-            currentContent?.stop()
-            switch currentContentType {
-            case .image:
-                guard let c = currentContent as? FAStoryImageContent else {break}
-                delegate?.storyAssetChanged(c.asset)
-            case .video:
-                guard let c = currentContent as? FAStoryVideoContent else {break}
-                delegate?.storyAssetChanged(c.asset)
+            
+            if !(delegate?.shouldShowPrevious() ?? false) {
                 
+                  _ = _initContent(story.content?[0])
+                  currentContent?.stop()
+                  switch currentContentType {
+                  case .image:
+                      guard let c = currentContent as? FAStoryImageContent else {break}
+                      delegate?.storyAssetChanged(c.asset)
+                  case .video:
+                      guard let c = currentContent as? FAStoryVideoContent else {break}
+                      delegate?.storyAssetChanged(c.asset)
+                      
+                  }
+                  start()
+                  return true
+            } else {
+                return true 
             }
-            start()
-            return true
+  
         }
         //
         currentIdx -= 1
