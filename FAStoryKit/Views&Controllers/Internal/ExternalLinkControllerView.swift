@@ -131,7 +131,15 @@ internal class ExternalLinkControllerView: UIView {
         
         addSubview(_lblLink)
         
-        _lblLink.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.6).isActive = true
+        let multiplier: CGFloat
+        
+        if traitCollection.horizontalSizeClass == .regular && traitCollection.verticalSizeClass == .regular {
+            multiplier = 0.4
+        } else {
+            multiplier = 0.6
+        }
+        
+        _lblLink.widthAnchor.constraint(equalTo: widthAnchor, multiplier: multiplier).isActive = true
         _lblLink.heightAnchor.constraint(equalToConstant: 40).isActive = true
         _lblLink.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         _lblLink.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -4).isActive = true
