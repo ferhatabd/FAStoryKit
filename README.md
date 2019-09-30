@@ -6,7 +6,7 @@ There is a starter project implementation [here](/../../../FAStoryKitStarter)
 
 Feel free to check it out 
 
-<img src="../screenshots/FAStoryKit-Sample.gif" width="400">
+<img src="../screenshots/FAStoryKit-Sample.gif" width="320">
 
 
 ## Features 
