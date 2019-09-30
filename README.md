@@ -7,7 +7,7 @@ There is a starter project implementation [here](/../../../FAStoryKitStarter)
 Feel free to check it out 
 
 
-![Alt text](/../screenshots/FAStoryKit-Sample.gif? = 200x400 "Sample")
+![Alt text](/../screenshots/FAStoryKit-Sample.gif? =200x400 "Sample")
 
 
 ## Features 
