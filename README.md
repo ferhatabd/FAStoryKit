@@ -6,6 +6,10 @@ There is a starter project implementation [here](/../../../FAStoryKitStarter)
 
 Feel free to check it out 
 
+
+![Alt text](/../screenshots/FAStoryKit-sample.gif?raw=true "Sample")
+
+
 ## Features 
 
 
