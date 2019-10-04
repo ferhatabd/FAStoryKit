@@ -365,9 +365,11 @@ final public class FAStoryViewController: UIViewController, StoryControllerDeleg
         //
         // configure the imageView for the main content
         //
+        
         imgView = UIImageView()
         imgView.translatesAutoresizingMaskIntoConstraints = false
-        imgView.contentMode = .scaleAspectFill
+        imgView.contentMode = (traitCollection.horizontalSizeClass == .regular && traitCollection.verticalSizeClass == .regular) ?  .scaleAspectFit :
+            .scaleAspectFill
         imgView.isHidden = false
         
         contentView.addSubview(imgView)
