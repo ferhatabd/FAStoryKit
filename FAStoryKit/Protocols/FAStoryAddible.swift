@@ -29,6 +29,9 @@ public protocol FAStoryAddible {
     /// duration for the content
     var duration: Double {get set}
     
+    /// content was seen by the user
+    var isContentSeen: Bool {get set}
+    
     /// content display start
     func start() -> Bool
     

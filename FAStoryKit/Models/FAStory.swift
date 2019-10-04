@@ -181,6 +181,7 @@ final public class FAStory: NSObject, FAStoryTeller, Decodable {
     
     /// Method to save the story as seen before
     public func setSeen() {
+        if isSeen {return}
         UserDefaults.standard.set(true, forKey: storySeenKey)
         isSeen = true
     }
