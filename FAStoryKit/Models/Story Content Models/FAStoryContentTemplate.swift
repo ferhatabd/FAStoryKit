@@ -122,6 +122,8 @@ public class FAStoryContentTemplate<Asset>: NSObject, FAStoryAddible, FAStoryCon
     
     public var duration: Double = 0
     
+    public var isContentSeen: Bool = false
+    
     public var content: Asset? {
         guard let _a = asset, _a.isContentReady else {return nil}
         return _a.content ?? nil

@@ -118,6 +118,11 @@ final public class FAStoryView: UIView {
         collectionView?.contentInset = insets
     }
     
+    /// Let or block the bouncinf movement of the story container view
+    /// - Parameter bounces: Pass __true__ to bounce
+    public func setBouncesOnScroll(_ bounces: Bool) {
+        collectionView?.alwaysBounceHorizontal = bounces
+    }
     // -----------------------------------
     
     
