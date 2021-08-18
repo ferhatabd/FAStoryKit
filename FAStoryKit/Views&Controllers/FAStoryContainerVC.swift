@@ -46,7 +46,7 @@ public class FAStoryContainer: UINavigationController, SwipeDismissInteractibleN
         return FAStoryVcStack.shared.viewController(forKey: .prev) != nil
     }
     
-    var dismissInteractionController: SwipeInteractionController?
+    public var dismissInteractionController: SwipeInteractionController?
     
     // -----------------------------------
     // Internal properties

@@ -54,7 +54,7 @@ public class SwipeInteractionController: UIPercentDrivenInteractiveTransition {
     private var oldTranslation: CGFloat = 0
     private let interactionDirection: SwipeIntetactionControllerDirection
     
-    init(viewController: UIViewController & SwipeDismissInteractible, direction: SwipeIntetactionControllerDirection = .vertical) {
+    public init(viewController: UIViewController & SwipeDismissInteractible, direction: SwipeIntetactionControllerDirection = .vertical) {
         self.interactorType = .viewController
         self.interactionDirection = direction
         super.init()
