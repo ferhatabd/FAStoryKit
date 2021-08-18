@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "FAStoryKit"
-  spec.version      = "1.0.6"
+  spec.version      = "1.0.7"
   spec.summary      = "Instagram like story handling"
 
   # This description is used to generate tags and improve search results.
@@ -131,7 +131,5 @@ Pod::Spec.new do |spec|
   # spec.requires_arc = true
 
   # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  spec.dependency 'FAGlobalKit'
-  spec.dependency 'SessionKit'
 
 end
