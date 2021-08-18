@@ -8,7 +8,7 @@
 
 import UIKit
 
-public protocol FAStoryDataSource: class {
+public protocol FAStoryDataSource: AnyObject {
     /// Method to ask for the Stories
     func stories() -> [FAStory]?
 }

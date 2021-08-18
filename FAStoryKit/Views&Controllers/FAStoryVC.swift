@@ -9,9 +9,8 @@
 import UIKit
 import AVFoundation
 import SafariServices
-import FAGlobalKit
 
-public protocol FAStoryViewControllerDelegate: class {
+public protocol FAStoryViewControllerDelegate: AnyObject {
     /// Asks the delegee for an image to be used
     /// for the dismiss button
     func dismissButtonImage() -> UIImage?

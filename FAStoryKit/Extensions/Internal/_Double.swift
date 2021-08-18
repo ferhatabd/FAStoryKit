@@ -20,4 +20,8 @@ internal extension Double {
     var toDegrees: Double {
         return (self * 180) / .pi
     }
+    
+    var raidants: Double {
+        self / 180.0 * Double.pi
+    }
 }

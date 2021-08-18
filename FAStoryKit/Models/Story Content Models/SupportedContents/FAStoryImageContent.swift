@@ -7,8 +7,6 @@
 //
 
 import Foundation
-import SessionKit
-
 public class FAStoryImageContent: FAStoryContentTemplate<UIImage>, FAStoryContentProtocol {
  
     // ==================================================== //
@@ -100,7 +98,7 @@ public class FAStoryImageContent: FAStoryContentTemplate<UIImage>, FAStoryConten
             }
         case .online:
             guard let _cachedImage = try? getObject(withName: contentName) as? UIImage else {
-                startDownload(url: assetUrl, name: contentName, destination: .toCache)
+                startDownload(url: assetUrl, name: contentName)
                 delegate?.contentDownloadStarted(for: asset)
                 return
             }
@@ -189,7 +187,7 @@ internal extension FAStoryImageContent {
         print("dl progress: \(progress)")
     }
     
-    func dlError(err: Error?, errType: DonwloadServiceErrors_enm) {
+    func dlError(err: Error?, errType: DonwloadServiceErrorsEnum) {
         delegate?.contentDownloadFinished(for: asset, success: false)
         print("dl error")
     }

@@ -8,7 +8,6 @@
 
 import Foundation
 import AVFoundation
-import SessionKit
 
 /// Story asset wrapper
 public struct FAStoryAsset<T> {
@@ -58,7 +57,7 @@ internal protocol FAStoryContentProtocol {
 /// regarding the content status, whether it's
 /// ready or not, is being downloaded and that case
 /// also the progress of the download
-public protocol FAStoryContentDelegate: class {
+public protocol FAStoryContentDelegate: AnyObject {
     /// content is set
     func contentReady<Asset>(_ asset: FAStoryAsset<Asset>)
     

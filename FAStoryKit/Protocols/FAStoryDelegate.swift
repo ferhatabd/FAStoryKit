@@ -8,7 +8,7 @@
 
 import UIKit
 
-public protocol FAStoryDelegate: class {
+public protocol FAStoryDelegate: AnyObject {
     /// cell horizontal spacing
     var cellHorizontalSpacing: CGFloat {get}
     
