@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import SessionKit
 
 ///
 /// Protocol for caching the content
@@ -76,7 +75,7 @@ public extension FAStoryContentCacher {
     
     /// Download a non-existing object
     func downloadContent(name: String, asset: URL) {
-        startDownload(url: asset, name: name, destination: .toCache)
+        startDownload(url: asset, name: name)
     }
     
 }
@@ -92,7 +91,7 @@ public extension FAStoryContentCacher {
         - name: Name that will be used for saving downloaded file
         - destination: Destination to save the downloaded file
      */
-    func startDownload(url: URL, name: String, destination: FileDestination_enm) {
+    func startDownload(url: URL, name: String) {
         //
         // Initialize the service
         //
@@ -111,7 +110,6 @@ public extension FAStoryContentCacher {
         guard let _service = DownloadService(url: url,
                                              username: nil,
                                              password: nil,
-                                             destPath: .toCache,
                                              filename: name,
                                              fileType: _type) else {return}
         
@@ -131,7 +129,7 @@ public extension FAStoryContentCacher {
         print("dl progress: \(progress)")
     }
     
-    func dlError(err: Error?, errType: DonwloadServiceErrors_enm) {
+    func dlError(err: Error?, errType: DonwloadServiceErrorsEnum) {
         print("dl error")
     }
 }

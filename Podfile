@@ -7,6 +7,4 @@ target 'FAStoryKit' do
 
   # Pods for FAStoryKit
 
-  pod 'FAGlobalKit', :path => '/Users/abdullahoglu/Desktop/Projects/Frameworks/FAGlobalKit'
-  pod 'SessionKit', :path => '/Users/abdullahoglu/Desktop/Projects/Frameworks/SessionKit'
 end

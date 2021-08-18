@@ -263,7 +263,7 @@ public class FAStoryVideoContent: FAStoryContentTemplate<AVPlayer>, FAStoryConte
             isObserving = false
             
             if playerObserverToken != nil, let p = player {
-                p.removeTimeObserver(playerObserverToken)
+                p.removeTimeObserver(playerObserverToken!)
             }
             delegate?.contentDisplayFinished(for: asset)
         }

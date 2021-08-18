@@ -59,9 +59,9 @@ internal extension FAStoryContainer {
             
             switch direction {
             case .left:
-                _ = jumpForward()
+                jumpForward()
             case .right:
-                _ = jumpBackward()
+                jumpBackward()
                 
             default:
                 break
@@ -73,9 +73,9 @@ internal extension FAStoryContainer {
             
             switch direction {
             case .left:
-                _ = jumpForward()
+                jumpForward()
             case .right:
-                _ = jumpBackward()
+                jumpBackward()
                 
             default:
                 break

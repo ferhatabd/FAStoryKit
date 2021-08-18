@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 
 
-internal protocol StoryControllerDelegate: class {
+internal protocol StoryControllerDelegate: AnyObject {
     func storyProgressChanged(_ progress: Double)
     func storyCurrentContentFinished()
     /// is called when the current story has no more content

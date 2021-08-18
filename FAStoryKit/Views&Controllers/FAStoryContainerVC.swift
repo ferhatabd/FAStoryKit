@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import FAGlobalKit
 
 /// Container for FAStoryViewControllers
 /// __FAStoryContainerVC__ supplied as a container view controller
@@ -47,7 +46,7 @@ public class FAStoryContainer: UINavigationController, SwipeDismissInteractibleN
         return FAStoryVcStack.shared.viewController(forKey: .prev) != nil
     }
     
-    public var dismissInteractionController: SwipeInteractionController?
+    var dismissInteractionController: SwipeInteractionController?
     
     // -----------------------------------
     // Internal properties

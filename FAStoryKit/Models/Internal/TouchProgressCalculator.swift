@@ -83,7 +83,7 @@ struct TouchProgressCalculator {
         // get the difference vector
         let w = substractVector(v, from: u)
         
-        let magnitude = self.magnitude(of: w).toCGFloat()
+        let magnitude = self.magnitude(of: w).cgFloat
         
         if a > b { // rotating in negative direction
             return -magnitude
@@ -129,15 +129,15 @@ struct TouchProgressCalculator {
      Gets a vector and returns its angle judging its quadrants
      */
     private func getAngleFromVector(_ u: CGPoint) -> Double {
-        let x1 = u.x.toDouble()
+        let x1 = u.x.double
         
-        let y1 = u.y.toDouble()
+        let y1 = u.y.double
         
         if x1 == 0 {
             if y1 > 0 {
-                return (0 as Double).toRadiants()
+                return 0
             } else if y1 < 0 {
-                return (-180 as Double).toRadiants()
+                return (-180 as Double).raidants
             } else {
                 return 0
             }
@@ -175,9 +175,8 @@ struct TouchProgressCalculator {
      Method to calculate the magnitude of a vector
      */
     private func magnitude(of u: CGPoint) -> Double {
-        let x = u.x.toDouble()
-        
-        let y = u.y.toDouble()
+        let x = u.x.double
+        let y = u.y.double
         
         return sqrt(x*x + y*y)
     }

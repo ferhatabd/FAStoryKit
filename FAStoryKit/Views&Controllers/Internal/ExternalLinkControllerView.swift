@@ -8,7 +8,7 @@
 
 import UIKit
 
-internal protocol ExternalLinkControllerDelegate: class {
+internal protocol ExternalLinkControllerDelegate: AnyObject {
     func openLink(_ url: URL) -> Void
 }
 
